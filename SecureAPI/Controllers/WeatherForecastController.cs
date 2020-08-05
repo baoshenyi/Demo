@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
-using SecureAPI.Service;
+using SecureAPI.Extension;
 using SecureAPI.Factory;
+using System;
 
 namespace SecureAPI.Controllers
 {
@@ -32,6 +31,14 @@ namespace SecureAPI.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            WeatherForecast weatherForecast = new WeatherForecast()
+            {
+                Date = DateTime.Now,
+                TemperatureC = 37,
+                Summary = "Hot"
+            };
+
+            var sports = weatherForecast.TakeSports();
             //use factory pattern to avoid new class()
             //any chages to "WeatherForecastService" will be handled in helper 
             return WeatherForecastHelper.Create().GetWeatherForecast();
