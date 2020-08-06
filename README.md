@@ -25,6 +25,7 @@
 - Thread safe, dependency injection and exception handling : in SecureAPI\Service\CacheService.cs and ICacheService.cs
 - Unit and functional test : use SecureAPITests project
 - Factory pattern : in SecureAPI\Factory\WeatherForecastHelper.cs
+- Extension method : in Extension\WeatherForecastExtension; demo it as var sports = weatherForecast.TakeSports(); in  WeatherForecastController.cs
 
 ## Result
 
