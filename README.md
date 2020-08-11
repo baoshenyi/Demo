@@ -1,3 +1,26 @@
+# Mike Wojcik Please help me with code review 
+1. Proper utilization of Dependency Injection (done)
+2. Code-first Entity Framework (Microsoft SQL Server) (done)
+3. Encapsulating Business logic within models independent of the DB implementation. (done, may be done better using https://fluentvalidation.net/)
+4. Composition & Inheritance (Bonus: Explain which is better and why?) (done and sent by email, not much comparison according to my underestanding)
+5. Basic design patterns (done, like dependency injection)
+6. Utilize AJAX to present an always up-to-date listing of vehicles on the track (no clue, real time update could be done by singalR according to my knowledge, prefer to get help from senior developer, like demo code or url)
+7. Write unit tests to prove the following business requirements (done by 2 ways: memory in DB and Moq)
+
+The following set of business requirements should help you demonstrate the above:
+1. Present an always up-to-date listing of vehicles on the race track (Utilizing AJAX) (see above)
+2. Present a single form to add vehicles to the race track. (Utilize a Type drop-down to determine which fields to show/hide, see inspections below) (related to 6)
+3. A maximum of 5 vehicles can be on the race-track at any time. (done: see unit test)
+4. Vehicles must pass an inspection prior to entering the track (done: see unit test)
+
+Truck Inspections:
+1. Tow strap on the vehicle (done: see unit test)
+2. Not lifted more than 5 inches (done: see unit test)
+
+Car Inspections:
+1. Tow strap on the vehicle (done: see unit test)
+2. Less than 85% tire wear (done: see unit test)
+
 # Matt and Chris Please help me with code review 
 
 ## Instruction
