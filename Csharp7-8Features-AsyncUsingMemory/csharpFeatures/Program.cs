@@ -12,7 +12,8 @@ namespace csharpFeatures
         static void Main(string[] args)
         {
             //Csharp7();
-            _ = Csharp8Async();
+            //_ = Csharp8Async();
+            //asyc call
             Task.Run(async () =>
             { await MakeTea(); }).Wait();
             Console.ReadLine();
@@ -28,14 +29,14 @@ namespace csharpFeatures
             var a = 0;
             for (int i = 0; i < 10000000; i++)
             {
-                a += 1;
+                a += 1;//5 seconds
             }
 
             Console.WriteLine("pub tea in cups");
             //save thread state to be saved to thread pool (RAM)
             //await start a new thread
             //https://marketplace.visualstudio.com/items?itemName=SharpDevelopTeam.ILSpy
-            var water = await boilingWater;
+            var water = await boilingWater;//pre-request
             Console.WriteLine($"pour {water} in cups");
         }
 
@@ -44,7 +45,7 @@ namespace csharpFeatures
             Console.WriteLine("open the kettle");
             Console.WriteLine("waiting for the kettle");
 
-            await Task.Delay(2000);
+            await Task.Delay(5000);
             Console.WriteLine("kettle finished boiling");
             return "hot water";
         }
@@ -57,7 +58,7 @@ namespace csharpFeatures
         //  <NullableContextOptions>enable</NullableContextOptions>
         //</PropertyGroup>
         /// </summary>
-        private static async Task Csharp8Async() { 
+        private static async Task Csharp8Async() {
             //1. Readonly members
             //   private readonly string strReadONLY = "string";
             //2. Default interface method
@@ -67,13 +68,14 @@ namespace csharpFeatures
             //5. Tuple patterns
             //   RockPaperScissors
             //6. Positional patterns
-            //   Point
+            //  Point point = new Point(2, 3);
+            //  var result = point.GetQuadrant(point);
             //7. Using declaration for variable
             //   using var file = new System.IO.StreamWriter("WriteLines2.txt");
             //8. Static local functions
-            //   LocalFunction(); void LocalFunction() => y = 0;
+            //  LocalFunction(); void LocalFunction() => y = 0;
             //9. Asynchronous stream
-            _ = GenerateSequence();
+            //  var result = GenerateSequence();
             //10.Indices and ranges
             var words = new string[]
             {
@@ -116,12 +118,12 @@ namespace csharpFeatures
         {
             for (int i = 0; i < 20; i++)
             {
-                await Task.Delay(100);
+                await Task.Delay(1000);
                 //return successive elements in the asynchronous stream
                 yield return i;
             }
-            int b=1, a=1;
-            int c = a * b; 
+            //int b=1, a=1;
+            //int c = a * b; 
         }
 
         public class Point
@@ -209,6 +211,7 @@ namespace csharpFeatures
         }
 
 
+        
         private static void Csharp7()
         {
             string ageString = "21";
@@ -219,7 +222,9 @@ namespace csharpFeatures
             if (ageObj is int age || (ageObj is string ageText
                 && int.TryParse(ageText, out age)))
             {
-                Console.WriteLine($"Your age is {age}.");
+                Console.WriteLine($"Your age is {age}."); 
+                //var str = string.Format("your age {0}", age.ToString());
+                //var str1 = "your age " + age.ToString() + "!";
             }
             else
             {
@@ -250,6 +255,7 @@ namespace csharpFeatures
             {
                 switch (p)
                 {
+                    //case nameof(Employee):
                     case Employee e when (e.IsManager == false):
                         Console.WriteLine($"{e.Name} is a good employee");
                         break;
@@ -271,6 +277,10 @@ namespace csharpFeatures
             List<Employee> employes = new List<Employee>() { emp1, emp2 };
             Employee manager = employes.Where(x => x.IsManager).FirstOrDefault() ??
                 throw new Exception("there is a problem to find manager");
+
+            //Employee manager1 = employes.Where(x => x.IsManager).FirstOrDefault();
+            //if(manager1 == null)
+            //    throw new Exception("there is a problem to find manager");
             Console.WriteLine($"the manager is {manager.Name}");
 
             //5. Improved Tuples
@@ -279,6 +289,11 @@ namespace csharpFeatures
             Console.WriteLine($"First name:{splitName.FirstName} Last name:{splitName.LastName}");
         }
 
+        /// <summary>
+        /// structure, class
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static (string FirstName, string LastName) SplitName(string name)
         {
             string[] value = name.Split(" ");
