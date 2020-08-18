@@ -48,6 +48,7 @@ namespace CoreCRUD.BusImp.Tests
         }
 
         [TestMethod()]
+        [TestCategory(nameof(Truck)+"-UnitTest")]
         public void ValidiateVehicle_False_MoreThanFiveVehiclie_Test()
         {
             var truck1 = new Truck() { Id = 1, HasTowStrap = true, LeftInches = 1 };
@@ -58,6 +59,8 @@ namespace CoreCRUD.BusImp.Tests
         [TestMethod()]
         public void ValidiateVehicle_False_TruckInspection_Test()
         {
+            var name = $"{nameof(Truck)} -UnitTest";
+            var name1 = nameof(Truck) + "-UnitTest";
             var truck = new Truck() { Id = 1, HasTowStrap = true, LeftInches = 6 };
             var result = Validate.ValidiateVehicle(_mockRaceTrackFour.Object, truck);
             Assert.IsFalse(result);

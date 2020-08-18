@@ -120,6 +120,8 @@ namespace csharpFeatures
                 //return successive elements in the asynchronous stream
                 yield return i;
             }
+            int b=1, a=1;
+            int c = a * b; 
         }
 
         public class Point
