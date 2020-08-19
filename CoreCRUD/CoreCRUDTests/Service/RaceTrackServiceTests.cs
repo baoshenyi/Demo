@@ -23,6 +23,7 @@ namespace CoreCRUD.Service.Tests
         {
             try
             {
+                //Entity framework memory for DAL testing
                 var myDatabaseName = "mydatabase_" + DateTime.Now.ToFileTimeUtc();
 
                 var options = new DbContextOptionsBuilder<CoreCRUDContext>()
