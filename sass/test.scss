@@ -1,25 +1,7 @@
-// _config.scss
-$font-stack: Arial, Helvetica, sans-serif;
-$light-color: #f4f4f4;
-$primary-color: #0e6cff;
-// $primary-color: #e0ffff;
-$secondary-color: #ff8700;
-
-
-// Set text color based on bg
-@function set-text-color($color) {
-  @if(lightness($color) > 70) {
-    @return #333;
-  } @else {
-    @return #fff;
-  }
-}
-
-// Set background & text color
-@mixin set-background($color) {
-  background-color: $color;
-  color: set-text-color($color)
-}
+@import 'config';
+@import 'button';
+@import 'utilities';
+@import 'mobile';
 
 // _style.scss
 * {
@@ -68,7 +50,7 @@ a {
       color: $secondary-color;
     }
   }
-
+  //& => .showcase from parent class name
   &-content {
     height: 100%;
     display: flex;
@@ -87,15 +69,6 @@ a {
   }
 }
 
-// _utilities.scss
-.container {
-  max-width: 1100px;
-  padding: 0 30px;
-  margin: 0 auto;
-  overflow: auto;
-}
-
-
 // Margin & padding classes
 $spaceamounts: (1,2,3,4,5);
 
@@ -112,43 +85,5 @@ $spaceamounts: (1,2,3,4,5);
   }
   .py-#{$space} {
     padding: #{$space}rem 0;
-  }
-}
-
-// _buttons.scss
-%btn {
-  display: inline-block;
-  border-radius: 5px;
-  padding: 8px 20px;
-  margin: 3px;
-
-  &:hover {
-    transform: scale(.98);
-  }
-}
-
-.btn-primary {
-  @extend %btn;
-  @include set-background(lighten($primary-color, 10%));
-}
-
-.btn-secondary {
-  @extend %btn;
-  @include set-background($secondary-color);
-}
-
-
-// _mobile.scss
-@media(max-width: 700px) {
-  .showcase {
-    height: 400px;
-
-    &-content {
-      text-align: center;
-
-      img {
-        display: none;
-      }
-    }
   }
 }

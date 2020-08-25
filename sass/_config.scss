@@ -1,0 +1,29 @@
+//file name with _ and scss will not be complied
+//will be treated as partial
+$font-stack: Arial, Helvetica, sans-serif;
+$light-color:hsl(143, 100%, 50%);
+$primary-color: rgb(36, 217, 230);// try different backgroup color
+$secondary-color: #ff8700;
+
+// Set text color based on bg
+@function set-text-color($color) {
+    @if(lightness($color) > 70) {
+      @return #333;
+    } @else {
+      @return #fff;
+    }
+  }
+  
+// Set background & text color
+@mixin set-background($color) {
+    /*
+    @if(lightness($color) > 70) {
+        background-color: rgba($color, 0.8);
+    } @else {
+        background-color: rgba($color, 0.6);
+    }
+    */
+    background-color: $color;
+    color: set-text-color($color)
+}
+  
