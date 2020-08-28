@@ -15,3 +15,7 @@ https://medium.com/@shristibal1998/creating-sql-profiler-type-logging-in-ssis-eb
 Right click package and choose "Logging" to add SQL Database, SQL Profiler and windows event logging
 SELECT *
   FROM [dbo].[sysssislog]
+  
+4. WebAPI.dtsx
+https://docs.microsoft.com/en-us/archive/blogs/dbrowne/how-to-load-an-assembly-in-a-ssis-script-task-that-isnt-in-the-gac
+Nuget package used in script task has been loaded to GAC or use "AppDomain.CurrentDomain.AssemblyResolve"

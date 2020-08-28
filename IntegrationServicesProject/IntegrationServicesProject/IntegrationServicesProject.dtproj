@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">GAMINGPC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT53rMam8j0OoX/taqSE0zQAAAAACAAAAAAAQZgAAAAEAACAAAADc+XaFySfPdAbTI/YWC1SiP3ZyILuhiDej0ioOwDA+ZQAAAAAOgAAAAAIAACAAAAAVUYskYoayW1gqhve89cMtQrtjHWONGua5noa8WY/W9pAAAADnn2alfaJhMwKeODdWbDXSGNCHMKyybPU6wTDipy9FUEYva0eZdgVKzS/DHoapt2cvxQqMWOCU0AvjLSy1GkVsEUTBt7Qvi1MFYPTRru7GsbGd5hmkEQK59aRuUVqdXkxLJu55mHjADM0XuUpkTghElqCOmIPd+0cf8jIzZPXbIPCGZ3be9yAWt5tokMmziP5AAAAAnwE6bRE2kfU7iChjMBygpvbusl3SH901QRjVSEB96rTWtYVtykNAZS4GiM+RX5Oe6DzUw/jkeo5XN9yIVZiVSQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT53rMam8j0OoX/taqSE0zQAAAAACAAAAAAAQZgAAAAEAACAAAAC8iqnPjxLf2DxpbEK6KcEYyDNL1S7xeztS4CYI5QjAtAAAAAAOgAAAAAIAACAAAADu+kURRZtZFCnqtUcRgVzLhAL47pjdWbTOGKlzzYDpzZAAAACTStsgNHZOGSpmEI89C2omLqueChkRLimRlBx4QO2dlnxSZ89OKTbPRb1xagxiHKxAvHvpgXBjUPdcSU8tHwryE2I9JWG5QNUnNELnZqluKcbBvAnzJrSNPbVrwP0UlBQK8csuEGN0BRgCc5P65MIpmFj8156A5wJQ7T7K/2RUuwflHwbdqvzc9Fh5Knz+0ORAAAAApWA7SZn9uww9Yw1TINehw3PKqDZldyxyVKDb98ZJzGmxZlV28myTEMb4WgYsFmVgrfBQk7AaH0WJtWYfLLvQJA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -34,6 +34,7 @@
           <SSIS:Package SSIS:Name="SQLTasks.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Checkpoints.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="LogingAudit.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="WebAPI.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
         <SSIS:DeploymentInfo>
@@ -1150,6 +1151,23 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="WebAPI.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{27D95CE8-7B50-40B5-B6F4-CC9E4F1AF4BF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F08CDF89-ACE1-4E5B-9F42-350F4AB03F4F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
