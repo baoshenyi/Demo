@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{9285D8E4-FD27-4BD7-86BD-A6FD4DB0FECB}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{CA15F214-E94D-41CF-8154-A194A430821D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -177,16 +177,6 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.SSISPractice]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{F18D2106-0F6F-41B4-91AC-E84258773548}"
-      DTS:ObjectName="localhost.SSISPractice">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SSISPractice;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -818,7 +808,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[ProductsDemo]</property>
+                  name="OpenRowset">[dbo].[ProductsDemo]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -861,8 +851,8 @@
               <connections>
                 <connection
                   refId="Package\Learn Error Handling\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.SSISPractice]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.SSISPractice]"
+                  connectionManagerID="{7B890568-1E30-4B89-B836-4BBB06280BBB}:invalid"
+                  connectionManagerRefId="{7B890568-1E30-4B89-B836-4BBB06280BBB}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

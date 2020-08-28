@@ -14,22 +14,10 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:SaveCheckpoints="True"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{C5B4601A-AA21-4A77-992A-4E41C06BD1F0}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{5E2D76F2-6947-4B34-9D0A-3F8E10E56816}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.SSISPractice]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{91D29598-25AB-4783-B63D-DAE4638599D7}"
-      DTS:ObjectName="localhost.SSISPractice">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SSISPractice;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -105,8 +93,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.SSISPractice]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.SSISPractice]"
+                  connectionManagerID="{91D29598-25AB-4783-B63D-DAE4638599D7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.SSISPractice]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -268,8 +256,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.SSISPractice]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.SSISPractice]"
+                  connectionManagerID="{91D29598-25AB-4783-B63D-DAE4638599D7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.SSISPractice]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

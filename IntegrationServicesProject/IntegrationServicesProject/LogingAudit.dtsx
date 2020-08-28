@@ -11,21 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{519CF25A-BFE0-4E12-8557-34B4252C6530}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B1045AB0-D9C7-4001-BFDF-C981671F10D3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.SSISPractice]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{4805C672-0222-478E-9B77-D2F3F0C6C503}"
-      DTS:ObjectName="localhost.SSISPractice">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=SSISPractice;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SQLProfilerLog.trc]"
       DTS:CreationName="FILE"
@@ -40,7 +30,7 @@
   </DTS:ConnectionManagers>
   <DTS:LogProviders>
     <DTS:LogProvider
-      DTS:ConfigString="localhost.SSISPractice"
+      DTS:ConfigString="{4805C672-0222-478E-9B77-D2F3F0C6C503}"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Writes log entries for events to a SQL Server database"
       DTS:DTSID="{A817EB29-9554-40EF-9B12-698010824ED2}"
