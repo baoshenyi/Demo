@@ -1,0 +1,11 @@
+OrderDate	Region	Name		Units	UnitCost
+07-Mar-19	West	Sorvino		7		19.99
+24-Mar-19	Central	Jardine		50		4.99
+10-Apr-19	Central	Andrews		66		1.99
+27-Apr-19	East	Gill		96		4.99
+14-May-19	Central	Gill		53		1.29
+31-May-19	Central	Kivell		80		8.99	
+17-Jun-19	Central	Jones		5		12.49
+04-Jul-19	East	Thompson	62		11.19
+21-Jul-19	Central	Sorvino		55		13.04
+ 
