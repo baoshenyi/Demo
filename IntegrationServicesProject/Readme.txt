@@ -9,3 +9,9 @@ update [dbo].[Destination] set [Total Amount]='Eighty'
 (failed)=> find IntegrationServicesProject\Checkpoint\Checkpoint.xml
 update [dbo].[Destination] set Name='Gilly' where Name='Gill'
 Only "Update records" runs
+
+3. LogingAudit.dtsx
+https://medium.com/@shristibal1998/creating-sql-profiler-type-logging-in-ssis-eba686d1e491
+Right click package and choose "Logging" to add SQL Database, SQL Profiler and windows event logging
+SELECT *
+  FROM [dbo].[sysssislog]
