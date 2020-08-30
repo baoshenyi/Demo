@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Shop.UI.ViewModels
+namespace Shop.Application.ViewModels
 {
     public class ProductViewModel
     {

@@ -1,4 +1,5 @@
-﻿using Shop.Database;
+﻿using Shop.Application.ViewModels;
+using Shop.Database;
 using Shop.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,13 @@ namespace Shop.Application.Products
             _context = context;
         }
 
-        public async Task Do(string Name, string Description, decimal Price)
+        public async Task Do(ProductViewModel productVM)
         {
             _context.Products.Add(new Product
             {
-                Name = Name,
-                Desription = Description,
-                Price = Price
+                Name = productVM.Name,
+                Desription = productVM.Desription,
+                Price = productVM.Price
             });
             _context.SaveChanges();
         }
