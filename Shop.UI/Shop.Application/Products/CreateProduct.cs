@@ -14,14 +14,14 @@ namespace Shop.Application.Products
             _context = context;
         }
 
-        public void Do(int Id, string Name, string Description, decimal Value)
+        public void Do(int Id, string Name, string Description, decimal Price)
         {
             _context.Products.Add(new Product
             {
                 Id = Id,
                 Name = Name,
                 Desription = Description,
-                Value = Value
+                Price = Price
             });
             _context.SaveChanges();
         }
