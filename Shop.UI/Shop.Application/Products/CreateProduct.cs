@@ -3,6 +3,7 @@ using Shop.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Shop.Application.Products
 {
@@ -14,11 +15,10 @@ namespace Shop.Application.Products
             _context = context;
         }
 
-        public void Do(int Id, string Name, string Description, decimal Price)
+        public async Task Do(string Name, string Description, decimal Price)
         {
             _context.Products.Add(new Product
             {
-                Id = Id,
                 Name = Name,
                 Desription = Description,
                 Price = Price
