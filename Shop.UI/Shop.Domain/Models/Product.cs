@@ -14,5 +14,7 @@ namespace Shop.Domain.Models
         //No type was specified for the decimal column 'Price' on entity type 'Product'. 
         //This will cause values to be silently truncated
         public decimal Price { get; set; }
+        public ICollection<Stock> Stock { get; set; }
+        public ICollection<OrderProduct> OrderProducts { get; set; }
     }
 }
