@@ -56,6 +56,9 @@ namespace Shop.UI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                //without following controller mapping, 
+                //Failed to load resource: the server responded with a status of 404 ()
+                endpoints.MapControllers();
             });
         }
     }

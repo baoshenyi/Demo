@@ -2,14 +2,28 @@
     el: '#app',
     data: {
         price: 0,
-        showPrice: true
+        showPrice: true,
+        loading: false
     },
     methods: {
         togglePrice: function () {
             this.showPrice = !this.showPrice;
         },
-        alert(v) {
+        alert: function (v) {
             alert(v)
+        },
+        getProducts: function () {
+            this.loading = true;
+            axios.get('/Admin/products')
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error){
+                    console.log(error);
+                })
+                .then(function () {
+                    this.loading = false;
+                });
         }
     },
     computed: {
