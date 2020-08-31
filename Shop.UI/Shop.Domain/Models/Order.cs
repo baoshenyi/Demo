@@ -13,6 +13,6 @@ namespace Shop.Domain.Models
         public string City { get; set; }
         public string Province { get; set; }
 
-        public ICollection<OrderProduct> OrderProducts { get; set; }
+        public ICollection<OrderProduct> OrderProducts { get; set; }//only identify 1 to menay relationship
     }
 }

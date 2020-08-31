@@ -53,7 +53,7 @@ namespace Shop.Database.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
-                    Desription = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>

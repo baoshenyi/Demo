@@ -8,7 +8,7 @@ namespace Shop.Application.ViewModels
     public class ProductViewModel
     {
         public string Name { get; set; }
-        public string Desription { get; set; }
-        public decimal Price { get; set; }
+        public string Description { get; set; }
+        public string Price { get; set; }
     }
 }
