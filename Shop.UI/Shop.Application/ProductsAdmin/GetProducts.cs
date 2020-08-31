@@ -1,4 +1,5 @@
-﻿using Shop.Database;
+﻿using Shop.Application.ViewModels;
+using Shop.Database;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,15 +20,7 @@ namespace Shop.Application.ProductsAdmin
                 Id = x.Id,
                 Name = x.Name,
                 Description = x.Description,
-                Price = x.Price
+                Price = x.Price.ToString()
             });
-
-        public class ProductViewModel
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public decimal Price { get; set; }
-        }
     }
 }
