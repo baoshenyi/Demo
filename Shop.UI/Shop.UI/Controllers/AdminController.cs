@@ -7,11 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Shop.Application.ProductsAdmin;
 using Shop.Application.ViewModels;
 using Shop.Database;
+using Shop.Domain.Models;
 
 namespace Shop.UI.Controllers
 {
     //https://www.youtube.com/watch?v=YzryhsY6Kss&list=PLOeFnOV9YBa50nT3fEs0yzgMmK1MRKw3j&index=10
-    [Route("[Controller]")]
+    [Route("[controller]")]
     public class AdminController : Controller
     {
         private ApplicationDBContext _context;
@@ -20,9 +21,9 @@ namespace Shop.UI.Controllers
             _context = context;
         }
         [HttpGet("products")]
-        public IActionResult GetProducts() 
+        public async Task<IEnumerable<ProductViewModel>> GetProducts() 
         {
-            return Ok(new GetProducts(_context).Do());
+            return await new GetProducts(_context).Do();
         }
         [HttpGet("products/{Id}")]
         public IActionResult GetProduct(int Id)

@@ -4,15 +4,24 @@
 }
 
 <div id="app">
-    <!--@@change is same as onchange=""-->
-    <input type="number" @@change="alert('hello')" v-model="price" />
-    <button v-on:click="togglePrice">Toggle Price</button>
     <button v-on:click="getProducts">Get Products</button>
-    <p>{{price}}</p>
-    <p v-show="showPrice">{{formatPrice}}</p>
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <tr v-for="product in products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+        </tr>
+    </table>
 </div>
 
-@section scripts{ 
+@section scripts{
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="~/js/Admin/main.js"></script>

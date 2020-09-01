@@ -1,27 +1,21 @@
 ﻿var app = new Vue({
     el: '#app',
     data: {
-        price: 0,
-        showPrice: true,
-        loading: false
+        loading: false,
+        products: []
     },
     methods: {
-        togglePrice: function () {
-            this.showPrice = !this.showPrice;
-        },
-        alert: function (v) {
-            alert(v)
-        },
         getProducts: function () {
             this.loading = true;
             axios.get('/Admin/products')
-                .then(function (response) {
+                .then(response => {
                     console.log(response);
+                    this.products = response.data;
                 })
-                .catch(function (error){
+                .catch(error =>{
                     console.log(error);
                 })
-                .then(function () {
+                .then(() => {
                     this.loading = false;
                 });
         }
