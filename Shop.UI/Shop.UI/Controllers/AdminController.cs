@@ -21,7 +21,7 @@ namespace Shop.UI.Controllers
             _context = context;
         }
         [HttpGet("products")]
-        public async Task<IEnumerable<ProductViewModel>> GetProducts() 
+        public async Task<IEnumerable<ProductViewModel>> GetProducts()
         {
             return await new GetProducts(_context).Do();
         }
@@ -30,20 +30,39 @@ namespace Shop.UI.Controllers
         {
             return Ok(new GetProduct(_context).Do(Id));
         }
-        [HttpPost("products")]
-        public IActionResult CreateProducts(ProductViewModel vm)
+        [HttpPost("product")]
+        //[FromBody] is required sicne post passes json object (complext type) to the function
+        public async Task<int> CreateProduct(
+            [FromBody] ProductViewModel vm)
         {
-            return Ok(new CreateProduct(_context).Do(vm));
-        }
+            return await new CreateProduct(_context).Do(vm);
+        } 
+
         [HttpDelete("products/{Id}")]
         public IActionResult DeleteProduct(int Id)
         {
             return Ok(new DeleteProduct(_context).Do(Id));
         }
-        [HttpPut("products")]
-        public IActionResult UpdateProduct(ProductViewModel vm)
+        [HttpPut("product")]
+        public async Task UpdateProduct([FromBody] ProductViewModel vm)
         {
-            return Ok(new UpdateProduct(_context).Do(vm));
+             await new UpdateProduct(_context).Do(vm);
         }
+
+        //Example to use [FromUri] to pass complext type; (tuples c#?)
+        //public class GeoPoint
+        //{
+        //    public double Latitude { get; set; }
+        //    public double Longitude { get; set; }
+        //}
+
+        //[RoutePrefix("api/Values")]
+        //public ValuesController : ApiController
+        //{
+        //[Route("{Latitude}/{Longitude}")]
+        //public HttpResponseMessage Get([FromUri] GeoPoint location) { ... }
+        //http://localhost/api/values/47.678558/-122.130989
+        //Caution: Will not work!    
+        //public HttpResponseMessage Post([FromBody] int id, [FromBody] string name) { ... }
     }
 }

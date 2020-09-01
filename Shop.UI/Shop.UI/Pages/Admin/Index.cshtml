@@ -4,7 +4,7 @@
 }
 
 <div id="app">
-    <button v-on:click="getProducts">Get Products</button>
+    <button @@click="getProducts">Get Products</button>
     <table class="table">
         <tr>
             <th>Id</th>
@@ -19,6 +19,12 @@
             <td>{{product.price}}</td>
         </tr>
     </table>
+    <div>
+        <input v-model="productModel.name" />
+        <input v-model="productModel.description" />
+        <input v-model="productModel.price" />
+        <button @@click="createProduct">Create Product</button>
+    </div>
 </div>
 
 @section scripts{

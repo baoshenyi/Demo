@@ -17,7 +17,8 @@ namespace Shop.Application.ProductsAdmin
             _context = context;
         }
 
-        public async Task Do(ProductViewModel productVM)
+        //without await, _context.SaveChangesAsync() will not work
+        public async Task<int> Do(ProductViewModel productVM)
         {
             _context.Products.Add(new Product
             {
@@ -25,7 +26,7 @@ namespace Shop.Application.ProductsAdmin
                 Description = productVM.Description,
                 Price = decimal.Parse(productVM.Price, NumberStyles.Currency)
             });
-            await _context.SaveChangesAsync();
+            return await  _context.SaveChangesAsync();
         }
     }
 }
