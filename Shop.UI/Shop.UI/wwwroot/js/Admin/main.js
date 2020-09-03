@@ -28,7 +28,8 @@
             this.loading = true;
             axios.post('/Admin/product', this.productModel)
                 .then(response => {
-                    console.log(response);
+                    console.log(response.data);
+                    this.products.push(response.data);
                 })
                 .catch(error => {
                     console.log(error);

@@ -18,15 +18,30 @@ namespace Shop.Application.ProductsAdmin
         }
 
         //without await, _context.SaveChangesAsync() will not work
-        public async Task<int> Do(ProductViewModel productVM)
+        public async Task<Response> Do(Request reqeest)
         {
-            _context.Products.Add(new Product
+            var product = new Product
             {
-                Name = productVM.Name,
-                Description = productVM.Description,
-                Price = decimal.Parse(productVM.Price, NumberStyles.Currency)
-            });
-            return await  _context.SaveChangesAsync();
+                Name = reqeest.Name,
+                Description = reqeest.Description,
+                Price = decimal.Parse(reqeest.Price, NumberStyles.Currency)
+            };
+            _context.Products.Add(product);
+            await  _context.SaveChangesAsync();
+            return new Response
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price
+            };
+        }
+        public class Response
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public decimal Price { get; set; }
         }
     }
 }

@@ -21,22 +21,15 @@ namespace Shop.UI.Controllers
             _context = context;
         }
         [HttpGet("products")]
-        public async Task<IEnumerable<ProductViewModel>> GetProducts()
-        {
-            return await new GetProducts(_context).Do();
-        }
+        public IActionResult GetProducts() => Ok(new GetProducts(_context).Do());
+
         [HttpGet("products/{Id}")]
-        public IActionResult GetProduct(int Id)
-        {
-            return Ok(new GetProduct(_context).Do(Id));
-        }
+        public IActionResult GetProduct(int Id) => Ok(new GetProduct(_context).Do(Id));
+
         [HttpPost("product")]
         //[FromBody] is required sicne post passes json object (complext type) to the function
-        public async Task<int> CreateProduct(
-            [FromBody] ProductViewModel vm)
-        {
-            return await new CreateProduct(_context).Do(vm);
-        } 
+        public IActionResult CreateProduct([FromBody] Request request) => Ok(new CreateProduct(_context).Do(request));
+
 
         [HttpDelete("products/{Id}")]
         public IActionResult DeleteProduct(int Id)
@@ -44,10 +37,8 @@ namespace Shop.UI.Controllers
             return Ok(new DeleteProduct(_context).Do(Id));
         }
         [HttpPut("product")]
-        public async Task UpdateProduct([FromBody] ProductViewModel vm)
-        {
-             await new UpdateProduct(_context).Do(vm);
-        }
+        public IActionResult UpdateProduct([FromBody] Request request) => 
+            Ok(new UpdateProduct(_context).Do(request));
 
         //Example to use [FromUri] to pass complext type; (tuples c#?)
         //public class GeoPoint

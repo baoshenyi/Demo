@@ -16,13 +16,20 @@ namespace Shop.Application.ProductsAdmin
             _context = context;
         }
 
-        public async Task<ProductViewModel> Do(int Id) =>
-            _context.Products.Where(x=> x.Id == Id).Select(x => new ProductViewModel
+        public async Task<Response> Do(int Id) =>
+            _context.Products.Where(x=> x.Id == Id).Select(x => new Response
             {
                 Id = x.Id,
                 Name = x.Name,
                 Description = x.Description,
-                Price = x.Price.ToString()
+                Price = x.Price
             }).FirstOrDefault();
+        public class Response
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public decimal Price { get; set; }
+        }
     }
 }

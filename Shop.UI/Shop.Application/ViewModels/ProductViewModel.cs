@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Shop.Application.ViewModels
 {
     [NotMapped]
-    public class ProductViewModel
+    public class Request
     {
         public int Id { get; set; }
         public string Name { get; set; }

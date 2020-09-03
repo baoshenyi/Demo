@@ -17,16 +17,29 @@ namespace Shop.Application.ProductsAdmin
             _context = context;
         }
 
-        public async Task Do(ProductViewModel productVM)
+        public async Task<Response> Do(Request request)
         {
-            var product = _context.Products.Where(x => x.Id == productVM.Id).FirstOrDefault();
+            var product = _context.Products.Where(x => x.Id == request.Id).FirstOrDefault();
             if (product != null)
             {
-                product.Name = productVM.Name;
-                product.Description = productVM.Description;
-                product.Price = decimal.Parse(productVM.Price);
+                product.Name = request.Name;
+                product.Description = request.Description;
+                product.Price = decimal.Parse(request.Price);
                 await _context.SaveChangesAsync();
             }
+            return new Response {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price
+            };
+        }
+        public class Response
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public decimal Price { get; set; }
         }
     }
 }

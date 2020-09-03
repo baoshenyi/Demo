@@ -14,13 +14,21 @@ namespace Shop.Application.ProductsAdmin
             _context = context;
         }
 
-        public async Task<IEnumerable<ProductViewModel>> Do() =>
-            _context.Products.ToList().Select(x => new ProductViewModel
+        public async Task<IEnumerable<Response>> Do() =>
+            _context.Products.ToList().Select(x => new Response
             {
                 Id = x.Id,
                 Name = x.Name,
                 Description = x.Description,
-                Price = x.Price.ToString()
+                Price = x.Price
             });
+
+        public class Response
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public decimal Price { get; set; }
+        }
     }
 }
