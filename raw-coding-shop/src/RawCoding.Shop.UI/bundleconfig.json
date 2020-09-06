@@ -1,9 +1,0 @@
-[
-  {
-    "outputFileName": "wwwroot/Jsbuddle/bundle.js",
-    "inputFiles": [
-      "wwwroot/js/admin/orders.min.js",
-      "wwwroot/js/admin/stock.min.js"
-    ]
-  }
-]
