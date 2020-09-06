@@ -55,7 +55,7 @@ namespace Shop.UI.Pages.Checkout
                 Amount = cartOrder.GetTotalCharge(),
                 Description = "Shop Purchase",
                 Currency = "gbp",
-                CustomerId = customer.Id
+                Customer = customer.Id
             });
 
             var sessionId = HttpContext.Session.Id;
