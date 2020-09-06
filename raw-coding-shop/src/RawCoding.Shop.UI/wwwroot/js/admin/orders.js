@@ -6,7 +6,7 @@
         orders: [],
         selectedOrder: null
     },
-    mounted() {
+    mounted: function() {
         this.getOrders();
     },
     watch: {
@@ -15,7 +15,7 @@
         }
     },
     methods: {
-        getOrders() {
+        getOrders: function()  {
             this.loading = true;
             axios.get('/orders?status=' + this.status)
                 .then(result => {
@@ -23,7 +23,7 @@
                     this.loading = false;
                 });
         },
-        selectOrder(id) {
+        selectOrder: function(id) {
             this.loading = true;
             axios.get('/orders/' + id)
                 .then(result => {
@@ -31,7 +31,7 @@
                     this.loading = false;
                 });
         },
-        updateOrder() {
+        updateOrder: function() {
             this.loading = true;
             axios.put('/orders/' + this.selectedOrder.id, null)
                 .then(result => {
@@ -40,7 +40,7 @@
                     this.getOrders();
                 });
         },
-        exitOrder() {
+        exitOrder: function() {
             this.selectedOrder = null;
         }
     },

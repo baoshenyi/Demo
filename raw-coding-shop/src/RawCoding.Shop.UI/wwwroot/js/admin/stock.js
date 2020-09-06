@@ -9,11 +9,11 @@
             qty: 10
         }
     },
-    mounted() {
+    mounted : function() {
         this.getStock();
     },
     methods: {
-        getStock() {
+        getStock : function() {
             this.loading = true;
             axios.get('/stocks')
                 .then(res => {
@@ -27,7 +27,7 @@
                     this.loading = false;
                 });
         },
-        updateStock() {
+        updateStock: function() {
             this.loading = true;
             axios.put('/stocks', {
                 stock: this.selectedProduct.stock.map(x => {
@@ -50,7 +50,7 @@
                     this.loading = false;
                 });
         },  
-        deleteStock(id, index) {
+        deleteStock: function(id, index) {
             this.loading = true;
             axios.delete('/stocks/' + id)
                 .then(res => {
@@ -64,7 +64,7 @@
                     this.loading = false;
                 });
         },  
-        addStock() {
+        addStock: function() {
             this.loading = true;
             axios.post('/stocks', this.newStock)
                 .then(res => {
@@ -78,7 +78,7 @@
                     this.loading = false;
                 });
         },
-        selectProduct(product) {
+        selectProduct: function(product) {
             this.selectedProduct = product;
             this.newStock.productId = product.id;
         }
