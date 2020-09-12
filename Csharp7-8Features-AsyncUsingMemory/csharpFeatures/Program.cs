@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace csharpFeatures
@@ -14,10 +15,51 @@ namespace csharpFeatures
             //Csharp7();
             //_ = Csharp8Async();
             //asyc call
-            Task.Run(async () =>
-            { await MakeTea(); }).Wait();
-            Console.ReadLine();
+            //Task.Run(async () =>
+            //{ await MakeTea(); }).Wait();
+            //Console.ReadLine();
+            //foreach (var result in PositiveInts(5))
+            //    Console.WriteLine(result);
+            testFromIHSMarkit();
+        }
 
+        private static void testFromIHSMarkit()
+        {
+            List<string> characters = new List<string>();
+
+            for (char c = 'A'; c <= 'Z'; c++)
+                characters.Add(c.ToString());
+            StringBuilder str = new StringBuilder();
+            int x = 100;
+
+            foreach (var result in GetAlpha(x))
+            {
+                var index = (result - 1) % 26;
+                str.Append(characters[index] + ", " + result.ToString() + ", ");
+            }
+        }
+
+        private static IEnumerable<int>  GetAlpha(int x)
+        {
+            for (int i=1;i<=x;i++)
+            {
+                yield return i;
+            }
+        }
+        /// <summary>
+        /// yeild to get continue numbers instead of memory leaking
+        /// </summary>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        private static IEnumerable<int> PositiveInts(int max)
+        {
+            int i = 1;
+            while (true)
+            {
+                yield return i++;
+                if(i>max)
+                    yield break;
+            }
         }
 
         public static async Task MakeTea()
